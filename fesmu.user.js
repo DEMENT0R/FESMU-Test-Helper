@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         FESMU TEST
-// @namespace    http://tampermonkey.net/
-// @version      0.2
-// @description  try to take over the world!
+// @namespace    fesmu tests solver
+// @version      0.2.1
+// @description  fesmu tests solver!
 // @author       DEMENTOR
 // @icon         http://www.fesmu.ru/SITE/img/caption_left.png
 // @match        http://www.fesmu.ru/eport/eport/*
@@ -20,6 +20,15 @@
     var need_solve = GM_getValue( 'need_solve', '0' );
     var have_solve = GM_getValue( 'have_solve', '0' );
     var $ = window.jQuery;
+
+    var widjet = "<div class='fesmu-bot-solver-block' style='position: fixed; top: 10px; right: 10px; z-index: 9999; border: 1px solid silver; padding: 5px;'>";
+    widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?start'>Start</a>";
+    widjet += " | ";
+    widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?reset'>Reset</a>";
+    widjet += "";
+    widjet += "</div>";
+
+    $('body').append(widjet);
 
     console.log("GM_listValues = " + GM_listValues());
     console.log("current_question = " + GM_getValue("current_question","0"));
