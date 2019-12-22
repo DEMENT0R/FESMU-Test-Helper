@@ -6,6 +6,8 @@
 // @author       DEMENTOR
 // @icon         http://www.fesmu.ru/SITE/img/caption_left.png
 // @match        http://www.fesmu.ru/eport/eport/*
+// @downloadURL  https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
+// @updateURL    https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
