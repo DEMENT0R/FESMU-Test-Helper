@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FESMU TEST
 // @namespace    fesmu tests solver
-// @version      0.2.1
+// @version      0.2.2
 // @description  fesmu tests solver!
 // @author       DEMENTOR
 // @icon         http://www.fesmu.ru/SITE/img/caption_left.png
@@ -23,7 +23,7 @@
     var have_solve = GM_getValue( 'have_solve', '0' );
     var $ = window.jQuery;
 
-    var widjet = "<div class='fesmu-bot-solver-block' style='position: fixed; top: 10px; right: 10px; z-index: 9999; border: 1px solid silver; padding: 5px;'>";
+    var widjet = "<div class='fesmu-bot-solver-block' style='position: fixed; top: 10px; right: 10px; z-index: 9999; border: 1px solid silver; padding: 5px; background: white;'>";
     widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?start'>Start</a>";
     widjet += " | ";
     widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?reset'>Reset</a>";
