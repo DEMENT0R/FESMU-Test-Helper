@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         FESMU TEST
 // @namespace    fesmu tests solver
-// @version      0.2.3
+// @version      0.2.4
 // @description  fesmu tests solver!
 // @author       DEMENTOR
-// @icon         http://eport.fesmu.ru/SITE/img/caption_left.png
+// @icon         http://www.fesmu.ru/SITE/img/caption_left.png
 // @match        http://eport.fesmu.ru/eport/eport/*
 // @downloadURL  https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
 // @updateURL    https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
