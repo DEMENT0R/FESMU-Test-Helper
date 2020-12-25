@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         FESMU TEST
 // @namespace    fesmu tests solver
-// @version      0.2.2
+// @version      0.2.3
 // @description  fesmu tests solver!
 // @author       DEMENTOR
-// @icon         http://www.fesmu.ru/SITE/img/caption_left.png
-// @match        http://www.fesmu.ru/eport/eport/*
+// @icon         http://eport.fesmu.ru/SITE/img/caption_left.png
+// @match        http://eport.fesmu.ru/eport/eport/*
 // @downloadURL  https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
 // @updateURL    https://github.com/DEMENT0R/FESMU-Test-Helper/raw/master/fesmu.user.js
 // @grant        GM_setValue
@@ -24,9 +24,9 @@
     var $ = window.jQuery;
 
     var widjet = "<div class='fesmu-bot-solver-block' style='position: fixed; top: 10px; right: 10px; z-index: 9999; border: 1px solid silver; padding: 5px; background: white;'>";
-    widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?start'>Start</a>";
+    widjet += "<a href='http://eport.fesmu.ru/eport/eport/studtst2.aspx?start'>Start</a>";
     widjet += " | ";
-    widjet += "<a href='http://www.fesmu.ru/eport/eport/studtst2.aspx?reset'>Reset</a>";
+    widjet += "<a href='http://eport.fesmu.ru/eport/eport/studtst2.aspx?reset'>Reset</a>";
     widjet += "";
     widjet += "</div>";
 
@@ -41,7 +41,7 @@
         i++;
 
         // СТАРТ!
-        if (window.location.href == "http://www.fesmu.ru/eport/eport/studtst2.aspx?start"){
+        if (window.location.href == "http://eport.fesmu.ru/eport/eport/studtst2.aspx?start"){
             if (i == 1) {
                 GM_setValue( 'current_question', 1 );
                 //alert("Начало работы!");
@@ -51,7 +51,7 @@
         }
 
         // Общий сброс
-        if (window.location.href == "http://www.fesmu.ru/eport/eport/studtst2.aspx?reset"){
+        if (window.location.href == "http://eport.fesmu.ru/eport/eport/studtst2.aspx?reset"){
             if (i == 1) {
                 GM_setValue( 'current_question', 0 );
                 GM_setValue( 'need_solve', true );
@@ -62,7 +62,7 @@
         }
 
         // Ставим все галки и возвращаемся на страницу с номерами вопросов (ответы неизвестны):
-        if (((window.location.href == "http://www.fesmu.ru/eport/eport/studtst30.aspx")&&(have_solve == false))|((window.location.href == "http://www.fesmu.ru/eport/eport/studtst3.aspx")&&(have_solve == false))){
+        if (((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst30.aspx")&&(have_solve == false))|((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst3.aspx")&&(have_solve == false))){
             if (i == 1) {
                 $('.dxWeb_edtCheckBoxUnchecked_Aqua').click();
             }
@@ -73,7 +73,7 @@
         }
 
         // Ставим нужные галки и возвращаемся на страницу с номерами вопросов (ответы известны):
-        if (((window.location.href == "http://www.fesmu.ru/eport/eport/studtst30.aspx")&&(have_solve == true))|((window.location.href == "http://www.fesmu.ru/eport/eport/studtst3.aspx")&&(have_solve == true))){
+        if (((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst30.aspx")&&(have_solve == true))|((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst3.aspx")&&(have_solve == true))){
             if (i == 1) {
                 if (GM_getValue( 'check_1', '0' ) == false) {
                     $('#ctl00_MainContent_ASPxCheckBox1_S_D').click();
@@ -102,7 +102,7 @@
 
 
         // Выбираем вопрос
-        if ((window.location.href == "http://www.fesmu.ru/eport/eport/studtst2.aspx")&&(need_solve == false)){
+        if ((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst2.aspx")&&(need_solve == false)){
             if ((i == 1)&&(current_question != 0)) {
                 $('#ctl00_MainContent_ASPxButton' + current_question+'_B').click();
 
@@ -112,11 +112,11 @@
         }
 
         // Идём смотреть ответы:
-        if ((window.location.href == "http://www.fesmu.ru/eport/eport/studtst2.aspx")&&(need_solve == true)){
+        if ((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst2.aspx")&&(need_solve == true)){
             if (i == 1) {
                 GM_setValue( 'need_solve', false );
-                //var a = window.open("http://www.fesmu.ru/eport/eport/studtst5.aspx", "_blank", ""); a.blur();
-                window.open("http://www.fesmu.ru/eport/eport/studtst5.aspx", "_blank", "");
+                //var a = window.open("http://eport.fesmu.ru/eport/eport/studtst5.aspx", "_blank", ""); a.blur();
+                window.open("http://eport.fesmu.ru/eport/eport/studtst5.aspx", "_blank", "");
             }
             if (i == 5) {
                 location.reload();
@@ -124,7 +124,7 @@
         }
 
         // Запоминаем правильные ответы:
-        if ((window.location.href == "http://www.fesmu.ru/eport/eport/studtst5.aspx")){
+        if ((window.location.href == "http://eport.fesmu.ru/eport/eport/studtst5.aspx")){
             if (i == 1) {
                 if (document.getElementById('ctl00_MainContent_Label1').style.backgroundColor == "aquamarine"){
                     GM_setValue( 'check_1', true );
